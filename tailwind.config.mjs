@@ -9,7 +9,8 @@ export default {
     extend: {
       colors: {
         Creamy: "#e6dbce",
-        Gray: "#989897",
+        Gray: "#6d6d6d",
+        Brown: "#8d7962",
       },
     },
   },
