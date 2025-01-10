@@ -12,6 +12,13 @@ export default function Header() {
           <Link href="/" className="[&>img]:hover:brightness-75">
             <Image src="/img.jpg" width={40} height={20} alt="logo" priority />
           </Link>
+          <ul>
+            {links.map(({ link, url }) => (
+              <li className="text-Gray" key={url}>
+                <Link href={url}>{link}</Link>
+              </li>
+            ))}
+          </ul>
           <button className="text-3xl [&>svg]:hover:text-Gray">
             <IoMenuOutline />
           </button>
@@ -28,3 +35,22 @@ w-full
 backdrop-blur-md
 py-6
 `;
+
+export const links = [
+  {
+    url: "/",
+    link: "home",
+  },
+  {
+    url: "/menu",
+    link: "menu",
+  },
+  {
+    url: "/news-and-articles",
+    link: "news",
+  },
+  {
+    url: "/reservation",
+    link: "reservation",
+  },
+];

@@ -1,22 +1,27 @@
+"use client"
 import tw from "tailwind-styled-components";
 import { HiMiniArrowUpRight } from "react-icons/hi2";
+import Link from "next/link";
 
-export default function MainBtn({ children, bg = "white", ...rest }) {
+export default function MainBtn(props) {
+  const { children, bg = "white", as, ...rest } = props;
+
   return (
-    <Button {...rest} $bg={bg}>
+    <Component {...rest} href="/" $as={as??Link} $bg={bg}>
       <HiMiniArrowUpRight id="first-i" />
       <span>{children ?? "btnnnnnnn"}</span>
       <HiMiniArrowUpRight id="second-i" />
-    </Button>
+    </Component>
   );
 }
 
-const Button = tw.button`
+const Component = tw.button`
 ${({ $bg }) =>
   $bg === "black"
     ? "bg-black text-white hover:bg-Brown"
     : "bg-white text-black hover:bg-Creamy"}
 flex
+w-fit
 relative
 items-center
 rounded-md

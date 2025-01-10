@@ -3,10 +3,10 @@ import Form from "@/components/Form";
 import Images from "@/components/Images";
 import Locations from "@/components/Locations";
 import MainBtn from "@/components/MainBtn";
-import News from "@/components/Article";
 import Numbers from "@/components/Numbers";
 import Slider from "@/components/Slider";
 import tw from "tailwind-styled-components";
+import News_Articles from "../news-and-articles/page";
 
 export default function Home() {
   return (
@@ -43,7 +43,12 @@ export default function Home() {
         {/* FORM INPUTS */}
         <Form />
         {/* NEWS AND ARTICLES */}
-        <News />
+        <div className="space-y-20">
+          <News_Articles />
+          <MainBtn className="w-fit mx-auto" href="/" bg="black">
+            View All
+          </MainBtn>
+        </div>
       </Container>
     </div>
   );

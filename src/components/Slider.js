@@ -8,6 +8,35 @@ import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import { useState } from "react";
 import MainBtn from "./MainBtn";
 
+const data = [
+  {
+    title: "Chirashi Bowl",
+    des: "Our signature dish, the Chirashi Bowl, is a vibrant medley of fresh sashimi, seasonal toppings, and perfectly seasoned sushi rice. A true celebration of Japanese craftsmanship, it’s as beautiful as it is delicious.",
+    img: "",
+  },
+  {
+    title: "Wagyu Delight",
+    des: "Indulge in the rich flavors of our Wagyu Dish, featuring melt-in-your-mouth premium Wagyu beef, seared to perfection and paired with seasonal sides. A luxurious taste of Japan’s finest, crafted for an unforgettable dining experience.",
+    img: "",
+  },
+  {
+    title: "Nigiri Assortment",
+    des: "Delight in our Nigiri Assortment, showcasing hand-pressed sushi rice topped with the finest cuts of fresh seafood. A timeless favorite, crafted with precision and care.",
+    img: "",
+  },
+  {
+    title: "Signature Sushi Roll",
+    des: "Experience our Signature Sushi Roll, a perfect blend of fresh ingredients, expertly rolled with precision and creativity. Bursting with flavor and crafted to delight, it’s a must-try for sushi lovers.",
+    img: "",
+  },
+  {
+    title: "Torched Sushi Selection",
+    des: "Discover the bold flavors of our Torched Sushi, where fresh ingredients meet the heat of the flame, creating a tantalizing balance of smoky aroma and delicate textures.",
+    img: "",
+  },
+];
+
+
 export default function Slider() {
   const [index, setIndex] = useState(0);
 
@@ -85,30 +114,3 @@ export default function Slider() {
   );
 }
 
-const data = [
-  {
-    title: "Chirashi Bowl",
-    des: "Our signature dish, the Chirashi Bowl, is a vibrant medley of fresh sashimi, seasonal toppings, and perfectly seasoned sushi rice. A true celebration of Japanese craftsmanship, it’s as beautiful as it is delicious.",
-    img: "",
-  },
-  {
-    title: "Wagyu Delight",
-    des: "Indulge in the rich flavors of our Wagyu Dish, featuring melt-in-your-mouth premium Wagyu beef, seared to perfection and paired with seasonal sides. A luxurious taste of Japan’s finest, crafted for an unforgettable dining experience.",
-    img: "",
-  },
-  {
-    title: "Nigiri Assortment",
-    des: "Delight in our Nigiri Assortment, showcasing hand-pressed sushi rice topped with the finest cuts of fresh seafood. A timeless favorite, crafted with precision and care.",
-    img: "",
-  },
-  {
-    title: "Signature Sushi Roll",
-    des: "Experience our Signature Sushi Roll, a perfect blend of fresh ingredients, expertly rolled with precision and creativity. Bursting with flavor and crafted to delight, it’s a must-try for sushi lovers.",
-    img: "",
-  },
-  {
-    title: "Torched Sushi Selection",
-    des: "Discover the bold flavors of our Torched Sushi, where fresh ingredients meet the heat of the flame, creating a tantalizing balance of smoky aroma and delicate textures.",
-    img: "",
-  },
-];

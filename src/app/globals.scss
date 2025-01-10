@@ -10,9 +10,9 @@ body {
   button,
   input,
   img,
-  textarea,
+  textarea,a,
   svg {
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   h1 {
     font-family: Prata sans-serif;
@@ -25,5 +25,9 @@ body {
     &:focus {
       border: 1px black solid;
     }
+  }
+  img{
+    width: auto;
+    height: auto;
   }
 }
