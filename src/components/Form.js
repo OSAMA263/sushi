@@ -6,7 +6,7 @@ export default function Form() {
     <div className="grid grid-cols-3 gap-x-10">
       <Image
         alt="img"
-        src="/img.jpg"
+        src="/reserve.jpg"
         className="rounded-md h-full w-full"
         width={400}
         height={800}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import tw from "tailwind-styled-components";
 
 export default function Card(props) {
-  const { tag, title, des, link, ...rest } = props;
+  const { tag, title, des, img, link, ...rest } = props;
 
   return (
     <Wrapper {...rest} href={link}>
@@ -14,10 +14,9 @@ export default function Card(props) {
       </span>
       <Image
         alt="card-img"
-        src="/img.jpg"
-        className="w-full"
-        width={400}
-        height={150}
+        src={img}
+        width={600}
+        height={250}
       />
       <div className="px-6 py-10 space-y-8">
         <h1 className="text-2xl font-semibold">{title}</h1>

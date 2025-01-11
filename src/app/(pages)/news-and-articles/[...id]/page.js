@@ -13,18 +13,18 @@ export default async function SingleArticle({ params }) {
     notFound();
   }
 
-  const { title, des, name, ingredients } = article;
+  const { title, des, name, ingredients,img } = article;
 
   return (
     <Container className="py-40 space-y-40">
-      <div className="space-y-8 [&_h6]:font-semibold">
+      <div className="space-y-12 [&_h6]:font-semibold">
         <h1 className="text-5xl">{name}</h1>
         <p>January 20, 2025</p>
         <Image
-          src="/img.jpg"
-          className="rounded-md"
+          src={img}
+          className="rounded-md w-full"
           alt="title"
-          width={600}
+          width={1000}
           height={600}
         />
         <h6 className="text-2xl">{title}</h6>

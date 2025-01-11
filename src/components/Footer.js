@@ -7,9 +7,9 @@ export default function Footer() {
     <footer className="bg-Creamy py-28 ">
       <Container className="flex justify-between items-center">
         <div className="space-y-4">
-          <Image src="/img.jpg" alt="logo" width={40} height={40} />
+          <Image src="/logo-dark.png" alt="logo" width={60} height={40} />
           <h6>hello-kisetsu-sushi@email.com</h6>
-          <h6>+1 206-123-1234</h6>
+          <h6>+20 112-145-130-6</h6>
           <div className="flex gap-2 text-3xl hover:[&>svg]:text-Brown hover:[&>svg]:cursor-pointer text-black">
             <FaLinkedin />
             <FaFacebookSquare />

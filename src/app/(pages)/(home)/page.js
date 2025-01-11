@@ -10,7 +10,7 @@ import News_Articles from "../news-and-articles/page";
 
 export default function Home() {
   return (
-    <div className="space-y-40">
+    <div className="space-y-40 pb-24">
       {/* HERO */}
       <div>
         <BG />
@@ -21,7 +21,7 @@ export default function Home() {
             meet masterful
             <br /> Japanese artistry. Experience pure elegance in every bite.
           </p>
-          <MainBtn />
+          <MainBtn href="/reservation">Reserve a table</MainBtn>
         </Container>
       </div>
       <Container className="space-y-64">
@@ -42,14 +42,14 @@ export default function Home() {
         <Locations />
         {/* FORM INPUTS */}
         <Form />
-        {/* NEWS AND ARTICLES */}
-        <div className="space-y-20">
-          <News_Articles />
-          <MainBtn className="w-fit mx-auto" href="/" bg="black">
-            View All
-          </MainBtn>
-        </div>
       </Container>
+      {/* NEWS AND ARTICLES */}
+      <div>
+        <News_Articles />
+        <MainBtn className="w-fit mx-auto" href="/" bg="black">
+          View All
+        </MainBtn>
+      </div>
     </div>
   );
 }
