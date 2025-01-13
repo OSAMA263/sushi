@@ -6,6 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import logoDark from "../../public/logo-dark.png";
+import logoWhite from "../../public/logo-white.png";
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
@@ -18,14 +20,13 @@ export default function Header() {
   return (
     <Wrapper>
       <Container>
-        <nav className="flex justify-between items-center">
+        <nav className="flex justify-between items-center ">
           <Link href="/" className="[&>img]:hover:brightness-75">
             <Image
-              src={pathname === "/" ? "/logo-white.png" : "/logo-dark.png"}
-              width={80}
-              height={20}
+              src={pathname != "/" ? logoDark : logoWhite}
               alt="logo"
               priority
+              width={80}
             />
           </Link>
           <NavLinks $active={toggle}>
@@ -45,6 +46,7 @@ export default function Header() {
                 ))}
               </ul>
               <button
+                aria-label="close nav links"
                 className="text-3xl [&>svg]:hover:text-Gray text-black"
                 onClick={() => setToggle(false)}
               >
@@ -53,6 +55,7 @@ export default function Header() {
             </Container>
           </NavLinks>
           <button
+            aria-label="open nav links"
             onClick={() => setToggle(true)}
             className={`${
               pathname === "/" ? "text-white" : "text-black"
@@ -67,7 +70,7 @@ export default function Header() {
 }
 
 const NavLinks = tw.div`
-${({ $active }) => ($active ? "!translate-y-0" : "!-translate-y-full")}
+${({ $active }) => ($active ? "!translate-y-0" : "!-translate-y-[150%]")}
 absolute
 w-full
 bg-white
@@ -75,7 +78,9 @@ left-0
 transition-all
 top-0
 py-10
+z-[6969]
 duration-300
+shadow-2xl
 `;
 
 const Wrapper = tw.header`
@@ -84,6 +89,7 @@ text-white
 w-full
 backdrop-blur-md
 py-6
+z-[69]
 `;
 
 export const links = [

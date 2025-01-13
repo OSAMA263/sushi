@@ -6,10 +6,10 @@ const data = [
 ];
 export default function Numbers() {
   return (
-    <div className="grid grid-cols-4 mt-40">
+    <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-10 mt-40">
       {data.map(({ text, num }, i) => (
         <div key={i} className="space-y-4 text-center">
-          <h6 className="text-4xl font-semibold">{num}</h6>
+          <h6 className="sm:text-4xl text-2xl font-semibold">{num}</h6>
           <p>{text}</p>
         </div>
       ))}

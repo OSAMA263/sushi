@@ -13,14 +13,14 @@ export default function Card(props) {
         {tag}
       </span>
       <Image
-        alt="card-img"
+        alt={title}
         src={img}
         width={600}
-        height={250}
+        height={260}
       />
-      <div className="px-6 py-10 space-y-8">
-        <h1 className="text-2xl font-semibold">{title}</h1>
-        <p className="text-Gray">{des}</p>
+      <div className="sm:px-6 sm:py-10 p-2 sm:space-y-8 space-y-2">
+        <h1 className="md:text-2xl text-lg font-semibold">{title}</h1>
+        <p className="text-Gray max-sm:text-sm">{des}</p>
       </div>
     </Wrapper>
   );

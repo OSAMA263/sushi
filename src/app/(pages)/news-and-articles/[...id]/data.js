@@ -1,7 +1,12 @@
+import article1 from "../../../../../public/article-1.jpg"
+import article2 from "../../../../../public/article-2.jpg"
+import article3 from "../../../../../public/article-3.jpg"
+import article4 from "../../../../../public/article-4.jpg"
+
 export const data = [
   {
     id: "article-1",
-    img:"/article-1.jpg",
+    img:article1,
     name: "The Health Benefits of Sushi",
     title: "Why Sushi is Good for You",
     des: "Sushi is not only delicious but also packed with health benefits. Rich in omega-3 fatty acids, sushi can contribute to heart health and improve brain function. Additionally, sushi often includes vegetables, providing essential vitamins and minerals.",
@@ -23,7 +28,7 @@ export const data = [
   },
   {
     id: "article-2",
-    img:"/article-2.jpg",
+    img:article2,
     name: "Perfect Wine Pairings for Sushi",
     title: "Wine and Sushi: A Perfect Match",
     des: "Pairing wine with sushi can enhance your dining experience. While sake is the traditional choice, many wines complement sushi beautifully. This article explores the best wine pairings for different types of sushi.",
@@ -45,7 +50,7 @@ export const data = [
   },
   {
     id: "article-3",
-    img:"/article-3.jpg",
+    img:article3,
     name: "The Ultimate Guide to Sushi Restaurants",
     title: "Discovering Sushi",
     des: "‍Sushi is more than just a meal; it's an experience that combines art, culture, and flavor. In this guide, we explore the best sushi restaurants that offer authentic Japanese cuisine. From traditional nigiri to innovative rolls, each restaurant has its unique flair.",
@@ -67,7 +72,7 @@ export const data = [
   },
   {
     id: "article-4",
-    img:"/article-4.jpg",
+    img:article4,
     name: "Sushi Festival 2023: A Celebration of Japanese Cuisine",
     title: "Join Us for the Sushi Festival 2023",
     des: "The Sushi Festival 2023 is just around the corner! This annual event celebrates the rich culture of Japanese cuisine with a focus on sushi. Attendees can enjoy tastings, cooking demonstrations, and workshops led by renowned chefs.",

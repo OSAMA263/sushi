@@ -6,6 +6,8 @@ export default function Container({ children, className }) {
 
 const Wrapper = tw.div`
 mx-auto
-w-[70%]
-
+2xl:w-[75%]
+xl:w-[85%]
+md:w-[90%]
+w-[96%]
 `;

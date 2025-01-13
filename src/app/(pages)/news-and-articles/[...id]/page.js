@@ -5,6 +5,16 @@ import { data } from "./data";
 import Card from "@/components/Card";
 import { cards } from "../data";
 
+export const generateMetadata = async ({params}) => {
+
+  const { id } = await params;
+  const article = data.find((article) => article.id === id[0]);
+  return {
+    title: article.name,
+    description: `${article.title} A vibrant sushi restaurant offering fresh rolls, sashimi, and a cozy, authentic dining experience.`,
+  };
+};
+
 export default async function SingleArticle({ params }) {
   const { id } = await params;
   const article = data.find((article) => article.id === id[0]);
@@ -13,19 +23,18 @@ export default async function SingleArticle({ params }) {
     notFound();
   }
 
-  const { title, des, name, ingredients,img } = article;
+  const { title, des, name, ingredients, img } = article;
 
   return (
     <Container className="py-40 space-y-40">
       <div className="space-y-12 [&_h6]:font-semibold">
-        <h1 className="text-5xl">{name}</h1>
+        <h1 className="md:text-5xl text-3xl">{name}</h1>
         <p>January 20, 2025</p>
         <Image
           src={img}
           className="rounded-md w-full"
-          alt="title"
+          alt={title}
           width={1000}
-          height={600}
         />
         <h6 className="text-2xl">{title}</h6>
         <p>{des}</p>
@@ -34,9 +43,9 @@ export default async function SingleArticle({ params }) {
           {ingredients?.map((item) =>
             item.name ? (
               <li className="ms-12" key={item.name}>
-                <div className="flex gap-1">
-                  <h6>{item.name}:</h6>
-                  <p>{item.details}</p>
+                <div className="">
+                  <h6 className="inline">{item.name}: </h6>
+                  <p className="inline">{item.details}</p>
                 </div>
               </li>
             ) : (
@@ -48,7 +57,7 @@ export default async function SingleArticle({ params }) {
       {/* OTHER ARTICLES */}
       <div className="space-y-10">
         <h1 className="text-4xl">You may also like...</h1>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-4">
           {cards
             .filter((card) => card.id != id)
             .map((card) => (

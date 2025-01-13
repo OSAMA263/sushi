@@ -10,27 +10,35 @@ import News_Articles from "../news-and-articles/page";
 
 export default function Home() {
   return (
-    <div className="space-y-40 pb-24">
+    <div className="lg:space-y-40 space-y-20 pb-24">
       {/* HERO */}
       <div>
         <BG />
-        <Container className="space-y-10 h-dvh text-white flex flex-col items-start justify-end pb-40">
-          <h1 className="text-[9rem]">Kisetsu Sushi</h1>
-          <p className="text-lg">
+        <Container className="space-y-10 h-dvh text-white flex flex-col items-start justify-end md:pb-40 pb-10">
+          <h1 className="xl:text-[9rem] sm:text-7xl text-5xl">Kisetsu Sushi</h1>
+          <p className="max-lg:text-lg max-sm:text-sm">
             Discover refined omakase at Kisetsu Sushi, where seasonal flavors
             meet masterful
-            <br /> Japanese artistry. Experience pure elegance in every bite.
+            <br className="max-sm:hidden" /> Japanese artistry. Experience pure
+            elegance in every bite.
           </p>
-          <MainBtn href="/reservation">Reserve a table</MainBtn>
+          <MainBtn
+            aria-label="form contact"
+            href="/reservation"
+            className="max-md:w-full max-md:justify-center"
+          >
+            Reserve a table
+          </MainBtn>
         </Container>
       </div>
-      <Container className="space-y-64">
+      <Container className="lg:space-y-64 space-y-32">
         {/* IMAGES */}
         <div className="text-center">
           <p className="text-lg">
             Experience sushi that balances tradition, precision, and the
             freshest seasonal ingredients
-            <br /> for a taste of true Japanese artistry.
+            <br className="max-sm:hidden" /> for a taste of true Japanese
+            artistry.
           </p>
           <Images />
           {/* NUMBERS */}
@@ -46,7 +54,7 @@ export default function Home() {
       {/* NEWS AND ARTICLES */}
       <div>
         <News_Articles />
-        <MainBtn className="w-fit mx-auto" href="/" bg="black">
+        <MainBtn   aria-label="view artivles" className="w-fit mx-auto" href="/news-and-articles" bg="black">
           View All
         </MainBtn>
       </div>

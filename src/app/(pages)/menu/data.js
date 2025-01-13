@@ -1,3 +1,12 @@
+import img1 from "../../../../public/menu/img-1.jpg";
+import img2 from "../../../../public/menu/img-2.jpg";
+import img3 from "../../../../public/menu/img-3.jpg";
+import img4 from "../../../../public/menu/img-4.jpg";
+import img5 from "../../../../public/menu/img-5.jpg";
+import img6 from "../../../../public/menu/img-6.jpg";
+import img7 from "../../../../public/menu/img-7.jpg";
+import img8 from "../../../../public/menu/img-8.jpg";
+
 export const menu_data = [
   {
     section: "Appetizer",
@@ -33,7 +42,7 @@ export const menu_data = [
         price: "34",
       },
     ],
-    imgs: ["", ""],
+    imgs: [img1, img2],
   },
   {
     section: "Kisetsu Signature",
@@ -69,7 +78,7 @@ export const menu_data = [
         price: "33",
       },
     ],
-    imgs: ["", ""],
+    imgs: [img3, img4],
   },
   {
     section: "Cocktail and Drinks",
@@ -105,7 +114,7 @@ export const menu_data = [
         price: "20",
       },
     ],
-    imgs: ["", ""],
+    imgs: [img5, img6],
   },
   {
     section: "Desserts",
@@ -120,13 +129,17 @@ export const menu_data = [
         des: "A Japanese twist on the classic Italian dessert.",
         price: "10",
       },
-      { name: "Yuzu Cheesecake", des: "Light and zesty cheesecake infused with yuzu citrus.", price: "9" },
+      {
+        name: "Yuzu Cheesecake",
+        des: "Light and zesty cheesecake infused with yuzu citrus.",
+        price: "9",
+      },
       {
         name: "Dorayaki",
         des: "Fluffy pancakes filled with sweet red bean paste.",
         price: "9",
       },
     ],
-    imgs: ["", ""],
+    imgs: [img7, img8],
   },
 ];

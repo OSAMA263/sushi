@@ -7,7 +7,7 @@ export default function MainBtn(props) {
   const { children, bg = "white", as, ...rest } = props;
 
   return (
-    <Component {...rest} href="/" $as={as??Link} $bg={bg}>
+    <Component {...rest} $as={as??Link} $bg={bg}>
       <HiMiniArrowUpRight id="first-i" />
       <span>{children ?? "btnnnnnnn"}</span>
       <HiMiniArrowUpRight id="second-i" />

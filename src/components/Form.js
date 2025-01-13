@@ -1,18 +1,17 @@
 import Image from "next/image";
 import tw from "tailwind-styled-components";
+import reserve from "../../public/reserve.jpg";
 
 export default function Form() {
   return (
-    <div className="grid grid-cols-3 gap-x-10">
+    <div className="grid lg:grid-cols-3 gap-10">
       <Image
         alt="img"
-        src="/reserve.jpg"
-        className="rounded-md h-full w-full"
-        width={400}
-        height={800}
+        className="rounded-md h-full max-lg:h-[300px] w-full"
+        src={reserve}
       />
-      <div className="space-y-10 col-span-2">
-        <h1 className="text-6xl">Reserve Your Experience</h1>
+      <div className="space-y-10 lg:col-span-2">
+        <h1 className="md:text-6xl text-4xl">Reserve Your Experience</h1>
         <p className="text-Gray">
           At Kisetsu Sushi, every detail is crafted for an exceptional
           experience. Whether savoring our omakase with loved ones or indulging
@@ -79,10 +78,11 @@ export default function Form() {
             />
           </div>
           <button
+            aria-label="submit btn"
             type="submit"
             className="text-center text-white bg-black hover:bg-Brown rounded-sm py-2"
           >
-            tbn
+            Reserve a table
           </button>
         </FormInputs>
       </div>
@@ -92,10 +92,11 @@ export default function Form() {
 
 const FormInputs = tw.form`
 grid
-grid-cols-2
+md:grid-cols-2
 [&>div]:gap-y-2
 [&>div]:flex
 [&>div]:flex-col
-gap-y-16
+md:gap-y-16
+gap-y-6
 gap-x-6
 `;
