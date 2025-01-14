@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
 import Img1 from "../../public/img-1.jpg";
 import Img2 from "../../public/img-2.jpg";
 import Img3 from "../../public/img-3.jpg";
 import Img4 from "../../public/img-4.jpg";
+import { motion } from "framer-motion";
+import Curtin from "./Curtin";
 
 const imgs = [Img1, Img2, Img3, Img4];
 
@@ -11,11 +14,20 @@ export default function Images() {
     <>
       <div className="lg:flex gap-6 grid md:grid-cols-2 mt-20 [&>img]:rounded-md">
         {imgs.map((src, i) => (
-          <div key={i}>
-            <Image
+          <div
+            className={`${
+              i % 2 != 0 ? "lg:translate-y-20" : ""
+            } relative overflow-hidden`}
+            key={i}
+          >
+            <Curtin
               className={`${
                 i % 2 != 0 ? "lg:translate-y-20" : ""
-              } w-full rounded-md max-lg:h-[250px] h-full`}
+              } absolute z-10 w-full h-full bg-white`}
+              y={i % 2 != 0 ? "-100%" : "100%"}
+            />
+            <Image
+              className={` w-full rounded-md max-lg:h-[250px] h-full`}
               src={src}
               alt={"img-" + i}
             />

@@ -2,10 +2,11 @@ import Image from "next/image";
 import Container from "./Container";
 import { FaLinkedin, FaFacebookSquare } from "react-icons/fa";
 import logo from "../../public/logo-dark.png";
+import { Links } from "./Header";
 
 export default function Footer() {
   return (
-    <footer className="bg-Creamy py-28 ">
+    <footer className="bg-gray-600 py-28 ">
       <Container className="flex justify-between items-center">
         <div className="space-y-4">
           <Image src={logo} alt="logo" width={60} height={40} />
@@ -16,7 +17,11 @@ export default function Footer() {
             <FaFacebookSquare />
           </div>
         </div>
-        <div className="space-y-4">{/* linkes from the header */}</div>
+        <div className="space-y-4">
+          <ul>
+            <Links />
+          </ul>
+        </div>
       </Container>
     </footer>
   );

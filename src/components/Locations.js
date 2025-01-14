@@ -3,6 +3,7 @@ import location1 from "../../public/locations/location-1.jpg";
 import location2 from "../../public/locations/location-2.jpg";
 import location3 from "../../public/locations/location-3.jpg";
 import tw from "tailwind-styled-components";
+import RevealElement from "./ReavelElement";
 
 const data = [
   {
@@ -31,15 +32,18 @@ export default function Locations() {
       <h1 className="md:text-6xl text-4xl">Our Location</h1>
       <Wrapper>
         {data.map(({ img, location, address, phone }) => (
-          <div key={location} className="space-y-6 text-center">
-            <Image
-              alt={location}
-              src={img}
-              className="rounded-md w-full max-lg:h-[200px]"
-            />
-            <h1 className="sm:text-3xl text-lg">{location}</h1>
-            <p className="text-Gray max-sm:text-sm">{address}</p>
-            <p className="text-Gray max-sm:text-sm">{phone}</p>
+          <div key={location} className="overflow-hidden">
+            <RevealElement x="-50%" >
+              <div className="space-y-6 text-center">
+              <Image
+                alt={location}
+                src={img}
+                className="rounded-md w-full max-lg:h-[200px]"
+              />
+              <h1 className="sm:text-3xl text-lg">{location}</h1>
+              <p className="text-Gray max-sm:text-sm">{address}</p>
+              <p className="text-Gray max-sm:text-sm">{phone}</p></div>
+            </RevealElement>
           </div>
         ))}
       </Wrapper>

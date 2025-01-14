@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import logoDark from "../../public/logo-dark.png";
 import logoWhite from "../../public/logo-white.png";
+import RevealElement from "./ReavelElement"
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
@@ -18,6 +19,7 @@ export default function Header() {
   }, [pathname]);
 
   return (
+    <RevealElement transition={{delay:1}}>
     <Wrapper>
       <Container>
         <nav className="flex justify-between items-center ">
@@ -32,18 +34,7 @@ export default function Header() {
           <NavLinks $active={toggle}>
             <Container className="flex justify-between items-start">
               <ul className="space-y-6 text-xl font-semibold">
-                {links.map(({ link, url }) => (
-                  <li key={url}>
-                    <Link
-                      className={`${
-                        pathname === url ? "text-Creamy" : "text-Gray"
-                      } hover:text-Brown`}
-                      href={url}
-                    >
-                      {link}
-                    </Link>
-                  </li>
-                ))}
+                <Links  />
               </ul>
               <button
                 aria-label="close nav links"
@@ -65,9 +56,25 @@ export default function Header() {
           </button>
         </nav>
       </Container>
-    </Wrapper>
+    </Wrapper></RevealElement>
   );
 }
+export const Links = () => {
+  const pathname = usePathname();
+
+  return links.map(({ link, url }) => (
+    <li key={url}>
+      <Link
+        className={`${
+          pathname === url ? "text-Creamy" : "text-Gray"
+        } hover:text-Brown`}
+        href={url}
+      >
+        {link}
+      </Link>
+    </li>
+  ));
+};
 
 const NavLinks = tw.div`
 ${({ $active }) => ($active ? "!translate-y-0" : "!-translate-y-[150%]")}

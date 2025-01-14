@@ -1,10 +1,20 @@
+"use client";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
-export default function MenuSection({ data }) {
+export default function MenuSection({ data, i }) {
   const { section, menu, imgs } = data;
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["1 1", "1 0"],
+  });
+
+  const width = useTransform(scrollYProgress, [0, 1], [200, 350]);
 
   return (
-    <section id={section} className="space-y-16">
+    <section ref={container} id={section} className="space-y-16">
       <h1 className="text-3xl font-semibold">{section}</h1>
       <div className="space-y-6">
         {menu.map(({ name, des, price }, i) => (
@@ -15,9 +25,15 @@ export default function MenuSection({ data }) {
           </div>
         ))}
       </div>
-      <div className="flex gap-4 [&>img]:rounded-md">
+      <div
+        className={`${
+          i % 2 != 0 ? "justify-self-end" : ""
+        } flex gap-4 [&>img]:rounded-md`}
+      >
         {imgs.map((src, j) => (
-          <Image src={src} alt="img" key={j} />
+          <motion.div style={{ width }} className="max-md:!w-full" key={j}>
+            <Image className="w-full rounded-md" src={src} alt="img" />
+          </motion.div>
         ))}
       </div>
     </section>
