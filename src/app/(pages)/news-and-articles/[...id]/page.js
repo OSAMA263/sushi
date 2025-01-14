@@ -7,9 +7,9 @@ import { cards } from "../data";
 import RevealElement from "@/components/ReavelElement";
 import Curtin from "@/components/Curtin";
 
-export const generateMetadata = async ({ params }) => {
-  const { id } = await params;
-  const article = data.find((article) => article.id === id[0]);
+export const generateMetadata = async (props) => {
+  const params = await props.params;
+  const article = data.find((article) => article.id === params.id[0]);
   return {
     title: article.name,
     description: `${article.title} A vibrant sushi restaurant offering fresh rolls, sashimi, and a cozy, authentic dining experience.`,
