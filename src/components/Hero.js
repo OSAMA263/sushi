@@ -35,7 +35,7 @@ export default function Hero() {
   );
 }
 const BG = tw.div`
-bg-[url('/img.jpg')]
+bg-[url('./img.jpg')]
 h-dvh
 w-full
 -z-10
