@@ -6,7 +6,11 @@ import RevealElement from "./ReavelElement";
 export default function Hero() {
   return (
     <div>
-      <BG />
+      <BG
+        style={{
+          backgroundImage: 'url("./img.jpg")',
+        }}
+      />
       <Container className="space-y-10 h-dvh text-white flex flex-col items-start justify-end md:pb-40 pb-10">
         <RevealElement
           init={{ scale: 1.1 }}
@@ -15,7 +19,7 @@ export default function Hero() {
         >
           <h1 className="xl:text-[9rem] sm:text-7xl text-5xl">Kisetsu Sushi</h1>
         </RevealElement>
-        <RevealElement transition={{delay:1}}>
+        <RevealElement transition={{ delay: 1 }}>
           <p className="max-lg:text-lg max-sm:text-sm">
             Discover refined omakase at Kisetsu Sushi, where seasonal flavors
             meet masterful
@@ -35,7 +39,6 @@ export default function Hero() {
   );
 }
 const BG = tw.div`
-bg-[url('/img.jpg')]
 h-dvh
 w-full
 -z-10
