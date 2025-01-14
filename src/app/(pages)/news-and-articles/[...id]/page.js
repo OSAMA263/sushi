@@ -7,6 +7,12 @@ import { cards } from "../data";
 import RevealElement from "@/components/ReavelElement";
 import Curtin from "@/components/Curtin";
 
+export async function generateStaticParams() {
+  return data.map((article) => ({
+    id: [article.id],
+  }));
+}
+
 export const generateMetadata = async (props) => {
   const params = await props.params;
   const article = data.find((article) => article.id === params.id[0]);
