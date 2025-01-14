@@ -1,4 +1,4 @@
-import loader from "../../../../../public/loader.gif";
+import loader from "../../../../public/loader.gif";
 import Image from "next/image";
 
 export default function Loading() {
