@@ -7,7 +7,7 @@ import Curtin from "./Curtin";
 export default function Form() {
   return (
     <div className="grid lg:grid-cols-3 gap-10">
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <Curtin y="-100%" />
         <Image
           alt="img"
