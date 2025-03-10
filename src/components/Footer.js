@@ -6,7 +6,7 @@ import { Links } from "./Header";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-600 py-28 ">
+    <footer className="bg-white py-28 ">
       <Container className="flex justify-between items-center">
         <div className="space-y-4">
           <Image src={logo} alt="logo" width={60} height={40} />
